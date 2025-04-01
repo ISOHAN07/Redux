@@ -4,9 +4,10 @@ import { counterActions } from "../store/Index";
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
-  // this hook automatically manages subscribing the store
+  const counter = useSelector((state) => state.counter.counter);
+  const show = useSelector((state) => state.counter.showCounter);
+  // this hook automatically manages subscribing the store 
+  // it helps us in accessing the states from the store
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
